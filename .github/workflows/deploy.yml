@@ -36,6 +36,13 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
+    - name: Setup Pages
+      uses: actions/configure-pages@v1
+    - name: Build with Jekyll
+      uses: actions/jekyll-build-pages@v1
+      with:
+        source: ./build
+        destination: ./_site
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
 
