@@ -1,57 +1,27 @@
-name: Deploy
+name: Github Pages Deploy
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-  pull-requests: write
-  issues: write
-  repository-projects: write
-
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+    branches:
+      - "master"
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    strategy:
-      matrix:
-        node-version: [16.16.0]
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build
 
-  BuildAndDeploy:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.16.0]
+        node-version: [15.x]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+
       - name: Install and build
         run: npm install && npm run build
+
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: build # The folder the action should deploy.
