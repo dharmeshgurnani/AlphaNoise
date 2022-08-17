@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/AlphaNoise/static/css/main.8c3c1042.css",
+    "main.js": "/AlphaNoise/static/js/main.f4d83248.js",
+    "static/js/787.c2f83425.chunk.js": "/AlphaNoise/static/js/787.c2f83425.chunk.js",
+    "static/media/wind.wav": "/AlphaNoise/static/media/wind.edc2fe515ec8c29b65a7.wav",
+    "static/media/birds.wav": "/AlphaNoise/static/media/birds.8d0d441a6921144e4e04.wav",
+    "static/media/rain.mp3": "/AlphaNoise/static/media/rain.4e28b90d8a4ced61ac25.mp3",
+    "static/media/storm.wav": "/AlphaNoise/static/media/storm.e0f84bfbb173b5178138.wav",
+    "index.html": "/AlphaNoise/index.html",
+    "main.8c3c1042.css.map": "/AlphaNoise/static/css/main.8c3c1042.css.map",
+    "main.f4d83248.js.map": "/AlphaNoise/static/js/main.f4d83248.js.map",
+    "787.c2f83425.chunk.js.map": "/AlphaNoise/static/js/787.c2f83425.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c3c1042.css",
+    "static/js/main.f4d83248.js"
+  ]
+}
