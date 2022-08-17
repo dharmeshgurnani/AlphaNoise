@@ -21,9 +21,9 @@ import {
 
 // Audio Assets
 const rainPath = require('../src/assets/audio/rain.mp3');
-const stormPath = require('../src/assets/audio/storm.wav');
-const windPath = require('../src/assets/audio/wind.wav');
-const birdsPath = require('../src/assets/audio/birds.wav')
+const stormPath = require('../src/assets/audio/storm.mp3');
+const windPath = require('../src/assets/audio/wind.mp3');
+const birdsPath = require('../src/assets/audio/birds.mp3')
 
 export const App = () => (
   <ChakraProvider theme={theme}>
