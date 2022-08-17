@@ -36,24 +36,17 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-    - name: Setup Pages
-      uses: actions/configure-pages@v1
-    - name: Build with Jekyll
-      uses: actions/jekyll-build-pages@v1
-      with:
-        source: ./build
-        destination: ./_site
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
 
   # Deployment job
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.16.0]
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.4.0
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
