@@ -27,22 +27,22 @@ const birdsPath = require('../src/assets/audio/birds.mp3')
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box  textAlign="center" fontSize="xl">
+    <Box  textAlign="center" borderRadius='20px' fontSize="xl">
       <Grid templateColumns='repeat(3, 1fr)'>
         <GridItem justifySelf="flex-start">
           <NoiseGenerator />
         </GridItem>
-        <GridItem justifySelf="flex-center">
-          <Heading textAlign={['center']} mt={2}>Alpha Noise</Heading>
+        <GridItem w='60vw' justifySelf="flex-center">
+          <Heading fontSize={'4vh'} textAlign={['center']} mt={2}>Alpha Noise</Heading>
         </GridItem>
         <GridItem justifySelf="flex-end">
           <ColorModeSwitcher justifySelf="flex-end" />
         </GridItem>
       </Grid>
-      <Grid p={3} justifyContent="center">
-        <VStack shadow='md' borderWidth='1px' spacing={8} maxW={720}>
+      <Grid p={3} justifyContent="center" borderRadius='20px'>
+        <VStack shadow='md' borderWidth='1px' borderRadius='20px' spacing={8} maxW={720}>
           {/* NATURE */}
-          <Box p={5} shadow='md' borderWidth='1px' >
+          <Box p={5} shadow='md' borderWidth='1px' borderRadius='20px'>
             <Heading textAlign={['left']} mt={4} >NATURE</Heading>
             <NoiseCartridge NoiseName='Rain' NoiseLogo={faCloudShowersHeavy} NoiseAudio={rainPath} />
             <NoiseCartridge NoiseName='Storm' NoiseLogo={faThunderstorm} NoiseAudio={stormPath} />

@@ -34,7 +34,7 @@ export const NoiseCartridge : React.FC<NoiseCartridgeProps> = ({ NoiseName, Nois
     };
 
     return (
-        <Box p={5} shadow='md' mt={5} borderWidth='1px' >
+        <Box p={5} shadow='md' mt={5} borderWidth='1px' borderRadius='20px'>
             <Grid
                 templateAreas={`
                   "logo text"
