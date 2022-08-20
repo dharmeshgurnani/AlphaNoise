@@ -6,7 +6,7 @@ export default function Header() {
         <Box position="fixed" top={0}>
             <Grid display={'none'}>TODO: add status bar</Grid>
             <Grid
-                bg={useColorModeValue('lightGray', 'rgba(66, 153, 225)')}
+                bg={useColorModeValue('gray', 'dark.200')}
                 position={'sticky'}
                 top={0}
                 templateColumns='repeat(2, 1fr)'>

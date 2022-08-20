@@ -35,7 +35,7 @@ export const NoiseCartridge : React.FC<NoiseCartridgeProps> = ({ NoiseName, Nois
     };
 
     return (
-        <Box p={5} shadow='md' mt={5} borderWidth='1px' borderRadius='20px'>
+        <Box p={5} shadow='md' mt={5} bg={useColorModeValue('lightgray','dark.100')} borderWidth='0px' borderRadius='20px'>
             <Grid
                 templateAreas={`
                   "logo text"
@@ -44,7 +44,7 @@ export const NoiseCartridge : React.FC<NoiseCartridgeProps> = ({ NoiseName, Nois
                 gridTemplateColumns={'20% 80%'}
                 gap='4'
                 fontWeight='bold'>
-                <GridItem area={'logo'}>
+                <GridItem area={'logo'} color={useColorModeValue('gray','dark.200')} >
                     <FontAwesomeIcon icon={NoiseLogo} className="NoiseLogo" />
                 </GridItem>
                 <GridItem area={'text'}>

@@ -1,38 +1,25 @@
-import React, { Component } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
-import { IconButton } from "@chakra-ui/react"
+import React from "react";
+import {Box,VStack,Grid,Heading,useColorModeValue } from "@chakra-ui/react"
+import { NoiseCartridge } from "./NoiseCartridge"
+import { faCloudShowersHeavy,faThunderstorm,faWind,faDove } from '@fortawesome/free-solid-svg-icons'
 
-// Import your audio file
-const rainPath = require('../assets/audio/rain.mp3');
+// Audio Assets
+const rainPath = require('../../src/assets/audio/rain.mp3');
+const stormPath = require('../../src/assets/audio/storm.mp3');
+const windPath = require('../../src/assets/audio/wind.mp3');
+const birdsPath = require('../../src/assets/audio/birds.mp3')
 
-class NoiseGenerator extends Component {
-  // Create state
-  state = {
-    audio: new Audio(rainPath),
-    isPlaying: false,
-  };
-
-  playPause = () => {
-    let isPlaying = this.state.isPlaying;
-    isPlaying ? this.state.audio.pause() : this.state.audio.play();
-    this.setState({ isPlaying: !isPlaying });
-  };
-
-  render() {
-    return (
-        <IconButton
-          size="md"
-          fontSize="lg"
-          variant="ghost"
-          color="current"
-          marginLeft="2"
-          onClick={this.playPause}
-          icon={<FontAwesomeIcon icon={this.state.isPlaying ? faPause : faPlay} />}
-          aria-label={`Switch to mode`}
-        />
-    );
-  }
-}
-
-export default NoiseGenerator;
+export const NoiseGenerator = () => (
+      <Grid p={3} justifyContent="center" borderRadius='20px'>
+        <VStack spacing={8} maxW={720}>
+          {/* NATURE */}
+          <Box p={5} shadow='md' bg={useColorModeValue('gray','dark.200')} borderWidth='0px' borderRadius='20px'>
+            <Heading textAlign={['left']} mt={4} >NATURE</Heading>
+            <NoiseCartridge NoiseName='Rain' NoiseLogo={faCloudShowersHeavy} NoiseAudio={rainPath} />
+            <NoiseCartridge NoiseName='Storm' NoiseLogo={faThunderstorm} NoiseAudio={stormPath} />
+            <NoiseCartridge NoiseName='Wind' NoiseLogo={faWind} NoiseAudio={windPath} />
+            <NoiseCartridge NoiseName='Birds' NoiseLogo={faDove} NoiseAudio={birdsPath} />
+          </Box>
+        </VStack>
+      </Grid>
+);
