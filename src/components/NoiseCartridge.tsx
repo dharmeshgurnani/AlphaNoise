@@ -9,9 +9,10 @@ import {
     SliderTrack,
     SliderFilledTrack,
     SliderThumb,
-    GridItem
+    GridItem,
+    useColorModeValue
 } from "@chakra-ui/react"
-
+import { MdGraphicEq } from "react-icons/md";
 interface NoiseCartridgeProps {
     NoiseName: string;
     NoiseLogo: any;
@@ -41,7 +42,7 @@ export const NoiseCartridge : React.FC<NoiseCartridgeProps> = ({ NoiseName, Nois
                   "logo slider"
                 `}
                 gridTemplateColumns={'20% 80%'}
-                gap='2'
+                gap='4'
                 fontWeight='bold'>
                 <GridItem area={'logo'}>
                     <FontAwesomeIcon icon={NoiseLogo} className="NoiseLogo" />
@@ -49,7 +50,7 @@ export const NoiseCartridge : React.FC<NoiseCartridgeProps> = ({ NoiseName, Nois
                 <GridItem area={'text'}>
                     <Text textAlign={['left']} >{NoiseName}</Text>
                 </GridItem>
-                <GridItem area={'slider'}>
+                <GridItem p={'0px 10px 0px 10px'} area={'slider'}>
                     <Slider
                     aria-label='slider-ex-1'
                     defaultValue={0.0}
@@ -60,7 +61,9 @@ export const NoiseCartridge : React.FC<NoiseCartridgeProps> = ({ NoiseName, Nois
                         <SliderTrack>
                             <SliderFilledTrack />
                         </SliderTrack>
-                        <SliderThumb />
+                        <SliderThumb boxSize={8}>
+                            <Box color={useColorModeValue('#1A202C', '#1A202C')} as={MdGraphicEq} />
+                        </SliderThumb>
                     </Slider>
                 </GridItem>
             </Grid>
