@@ -45,7 +45,7 @@ export default function Footer() {
     return (
       <Box
       bg={useColorModeValue('lightGray', 'rgba(66, 153, 225, 0.6)')}
-      color={useColorModeValue('black', 'black')}>
+      color={useColorModeValue('black', 'black')} h="17.4vh">
       <Container
           as={Stack}
           maxW={'6xl'}
@@ -56,10 +56,10 @@ export default function Footer() {
           align={{ base: 'center', md: 'center' }}>
           <Text>dharmeshgurnani</Text>
           <Stack direction={'row'} spacing={6}>
-              <SocialButton label={'Twitter'} href={'twitter.com/dharmeshgurnani'}>
+              <SocialButton label={'Twitter'} href={'https://www.twitter.com/dharmeshgurnani'}>
                 <FaTwitter />
               </SocialButton>
-              <SocialButton label={'Github'} href={'github.com/dharmeshgurnani'}>
+              <SocialButton label={'Github'} href={'https://www.github.com/dharmeshgurnani'}>
                   <FaGithub />
               </SocialButton>
           </Stack>
