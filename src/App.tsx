@@ -9,6 +9,6 @@ export const App = () => (
   <ChakraProvider theme={theme} maxH={'100vh'}>
     <Header />
     <Main/>
-    <Footer/>
+    {/* <Footer/> */}
   </ChakraProvider>
   );
