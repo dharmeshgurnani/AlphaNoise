@@ -7,6 +7,12 @@ const theme = extendTheme({
       100: "#16161a",
       200: "#29293e",
       300: "#7f5af0",
+    },
+    light: {
+      100: "#ececec",
+      200: "#f6f6f6",
+      300: "#ffffff",
+      400: "#4880b9",
     }
   },
   styles: {
