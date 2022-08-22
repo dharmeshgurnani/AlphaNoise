@@ -21,10 +21,11 @@ export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = (props) => {
   return (
     <IconButton
       size="md"
-      fontSize="lg"
+      fontSize="1.7rem"
       variant="ghost"
-      color="current"
+      color={useColorModeValue("light.400","")}
       marginLeft="2"
+      marginTop="2"
       onClick={toggleColorMode}
       icon={<SwitchIcon />}
       aria-label={`Switch to ${text} mode`}

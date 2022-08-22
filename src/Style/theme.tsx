@@ -5,7 +5,7 @@ const theme = extendTheme({
   colors: {
     dark: {
       100: "#16161a",
-      200: "#29293e",
+      200: "#59596f",
       300: "#7f5af0",
     },
     light: {

@@ -11,11 +11,12 @@ const birdsPath = require('../../src/assets/audio/birds.mp3')
 
 export const NoiseGenerator = () => (
       <Grid p={3} justifyContent="center" borderRadius='20px'>
-        <VStack spacing={8} maxW={720}>
+        <VStack spacing={8} maxW={720} m={2}>
           {/* NATURE */}
           <Box
             p={5}
-            paddingTop={20}
+            pt={20}
+            mt={10}
             shadow='md'
             bg={useColorModeValue('light.300','dark.200')}
             borderWidth='0px'
@@ -30,10 +31,13 @@ export const NoiseGenerator = () => (
               borderTopLeftRadius={"20px"}
               borderTopRightRadius={"20px"}
             >
-              <Heading 
+              <Heading
                 color={useColorModeValue("light.400","")}
                 textAlign={['left']}
-                mt={0}>
+                pt={5}
+                pl={10}
+                borderBottom={"2px"}
+                >
                   NATURE
               </Heading>
             </Box>
