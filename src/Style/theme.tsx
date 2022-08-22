@@ -6,7 +6,7 @@ const theme = extendTheme({
     dark: {
       100: "#262626",
       200: "#111",
-      300: "#7f5af0",
+      300: "#434343",
     },
     light: {
       100: "#ececec",
