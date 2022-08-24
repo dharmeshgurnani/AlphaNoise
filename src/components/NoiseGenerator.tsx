@@ -15,8 +15,8 @@ export const NoiseGenerator = () => (
           {/* NATURE */}
           <Box
             p={5}
-            pt={20}
-            mt={10}
+            pt={"4rem"}
+            mt={5}
             shadow='md'
             bg={useColorModeValue('light.300','dark.200')}
             borderWidth='0px'
