@@ -34,8 +34,7 @@ export const NoiseGenerator = () => (
               <Heading
                 color={useColorModeValue("light.400","")}
                 textAlign={['left']}
-                pt={5}
-                pl={10}
+                pt={5} pl={5}
                 borderBottom={"2px"}
                 >
                   NATURE
