@@ -16,7 +16,7 @@ export default function Header() {
                         fontSize={'1.7rem'}
                         textAlign={['left']}
                         pl={5}
-                        pt={5}>
+                        pt={2}>
                         Alpha Noise
                     </Heading>
                 </GridItem>
