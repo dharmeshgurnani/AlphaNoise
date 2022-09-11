@@ -1,5 +1,6 @@
 // theme.ts (tsx file with usage of StyleFunctions, see 4.)
 import { extendTheme } from '@chakra-ui/react'
+import { mode } from '@chakra-ui/theme-tools';
 
 const theme = extendTheme({
   colors: {
@@ -16,11 +17,12 @@ const theme = extendTheme({
     }
   },
   styles: {
-    global: {
+    global: (props:any) => ({
       // styles for the `body`
       body: {
+        background: mode('light.100','dark.100')(props),
       }
-    },
+    }),
   },
   components: {
     // for components

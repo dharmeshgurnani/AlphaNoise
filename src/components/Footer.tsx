@@ -1,69 +1,48 @@
-import {
-  Box,
-  chakra,
-  Container,
-  Stack,
-  Text,
-  useColorModeValue,
-  VisuallyHidden,
-} from '@chakra-ui/react';
-import { FaGithub, FaTwitter } from 'react-icons/fa';
-import { ReactNode } from 'react';
-
-const SocialButton = ({
-  children,
-  label,
-  href,
-}: {
-  children: ReactNode;
-  label: string;
-  href: string;
-}) => {
-  return (
-      <chakra.button
-          bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-          rounded={'full'}
-          w={8}
-          h={8}
-          cursor={'pointer'}
-          as={'a'}
-          href={href}
-          display={'inline-flex'}
-          alignItems={'center'}
-          justifyContent={'center'}
-          transition={'background 0.3s ease'}
-          _hover={{
-              bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
-          }}>
-          <VisuallyHidden>{label}</VisuallyHidden>
-          {children}
-      </chakra.button>
-  );
-};
+import { Box, Grid, GridItem, useColorModeValue, IconButton } from '@chakra-ui/react';
+import { FaSatelliteDish, FaToolbox, FaInfo } from "react-icons/fa"
 
 export default function Footer() {
-    return (
-      <Box
-      bg={useColorModeValue('light.300', 'dark.200')}
-      color={useColorModeValue('black', 'black')} h="12vh">
-      <Container
-          as={Stack}
-          maxW={'6xl'}
-          py={4}
-          direction={{ base: 'column', md: 'row' }}
-          spacing={4}
-          justify={{ base: 'center', md: 'space-between' }}
-          align={{ base: 'center', md: 'center' }}>
-          <Text>dharmeshgurnani</Text>
-          <Stack direction={'row'} spacing={6}>
-              <SocialButton label={'Twitter'} href={'https://www.twitter.com/dharmeshgurnani'}>
-                <FaTwitter />
-              </SocialButton>
-              <SocialButton label={'Github'} href={'https://www.github.com/dharmeshgurnani'}>
-                  <FaGithub />
-              </SocialButton>
-          </Stack>
-      </Container>
-  </Box>
-    );
+  return (
+    <Box position="fixed" bottom={0} zIndex={100} w={'100vw'}>
+      <Grid
+        bg={useColorModeValue('light.300', 'dark.200')}
+        templateColumns='repeat(3, 1fr)'
+        padding={'10px'}
+        justifyItems={'center'}>
+        <GridItem w={'100%'}>
+          <IconButton
+            fontSize="1.7rem"
+            variant="ghost"
+            w={'100%'}
+            color={useColorModeValue("light.400", "")}
+            onClick={() => { }}
+            icon={<FaSatelliteDish/>}
+            aria-label={`Dashboard`}
+          />
+        </GridItem>
+        <GridItem w={'100%'}>
+          <IconButton
+            fontSize="1.7rem"
+            variant="ghost"
+            w={'100%'}
+            color={useColorModeValue("light.400", "")}
+            onClick={() => { }}
+            icon={<FaToolbox/>}
+            aria-label={`Settings`}
+          />
+        </GridItem>
+        <GridItem w={'100%'}>
+          <IconButton
+            fontSize="1.7rem"
+            variant="ghost"
+            w={'100%'}
+            color={useColorModeValue("light.400", "")}
+            onClick={() => { }}
+            icon={<FaInfo/>}
+            aria-label={`About`}
+          />
+        </GridItem>
+      </Grid>
+    </Box>
+  );
 }

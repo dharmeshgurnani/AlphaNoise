@@ -1,9 +1,27 @@
 import * as React from "react"
-import { Box,useColorModeValue } from "@chakra-ui/react"
 import { NoiseGenerator } from "./NoiseGenerator"
 
+// Import Swiper React components and Swiper styles
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+
+const Dashboard = () => {
+  return (<Swiper
+    spaceBetween={50}
+    slidesPerView={1}
+    onSlideChange={() => console.log('slide change')}
+    onSwiper={(swiper) => console.log(swiper)} >
+    <SwiperSlide>
+      <NoiseGenerator />
+    </SwiperSlide>
+    <SwiperSlide >
+      <NoiseGenerator />
+    </SwiperSlide>
+  </Swiper>);
+};
+
 export const Main = () => (
-    <Box textAlign="center" bg={useColorModeValue('light.100','dark.100')} borderRadius='20px' pt={10} fontSize="xl">
-      <NoiseGenerator/>
-    </Box>
+<Dashboard />
+//TODO: settings
+//TODO: About
 );

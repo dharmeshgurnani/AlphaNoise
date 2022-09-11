@@ -3,7 +3,7 @@ import { ColorModeSwitcher } from "../ColorModeSwitcher"
 
 export default function Header() {
     return (
-        <Box position="fixed" top={0} z-index="1">
+        <Box position="fixed" top={0} zIndex={100} >
             <Grid display={'none'}>TODO: add status bar</Grid>
             <Grid
                 bg={useColorModeValue('light.300', 'dark.200')}
